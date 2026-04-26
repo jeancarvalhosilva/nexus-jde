@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Nexus JDE</title>
+  <title>Nexus JDE | Consultoria em Tecnologia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -12,14 +12,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #000;
+
+      /* FUNDO CLARO PREMIUM */
+      background: linear-gradient(135deg, #f8fafc, #eef2f7);
+
       overflow: hidden;
+      font-family: Arial, sans-serif;
     }
 
     .container {
       position: relative;
       width: 80vw;
-      max-width: 320px;
+      max-width: 340px;
       aspect-ratio: 1/1;
       display: flex;
       justify-content: center;
@@ -27,52 +31,59 @@
     }
 
     .logo {
-      width: 70%;
-      max-width: 220px;
+      width: 75%;
+      max-width: 240px;
       z-index: 2;
-      filter: drop-shadow(0 0 20px rgba(0,150,255,0.6));
-      animation: float 5s ease-in-out infinite;
+
+      /* sombra essencial pra contraste */
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.18));
+
+      animation: float 6s ease-in-out infinite;
     }
 
+    /* glow bem sutil */
     .glow {
       position: absolute;
-      width: 120%;
-      height: 120%;
-      background: radial-gradient(circle, rgba(0,150,255,0.25), transparent 70%);
+      width: 130%;
+      height: 130%;
+      background: radial-gradient(circle, rgba(30,136,229,0.08), transparent 70%);
       filter: blur(60px);
       z-index: 1;
-      animation: pulse 4s infinite;
+      animation: pulse 6s infinite;
     }
 
+    /* órbita leve */
     .orbit {
       position: absolute;
       width: 100%;
       height: 100%;
-      border: 1px solid rgba(0,150,255,0.15);
+      border: 1px solid rgba(0,0,0,0.06);
       border-radius: 50%;
-      animation: rotate 12s linear infinite;
+      animation: rotate 22s linear infinite;
     }
 
     .orbit.reverse {
       animation-direction: reverse;
-      animation-duration: 18s;
+      animation-duration: 30s;
+      border: 1px solid rgba(30,136,229,0.10);
     }
 
+    /* pontos ajustados */
     .dot {
-      width: 8px;
-      height: 8px;
-      background: #00aaff;
+      width: 7px;
+      height: 7px;
+      background: #1e88e5;
       border-radius: 50%;
       position: absolute;
-      top: -4px;
+      top: -3.5px;
       left: 50%;
       transform: translateX(-50%);
-      box-shadow: 0 0 8px #00aaff;
+      box-shadow: 0 0 6px rgba(30,136,229,0.4);
     }
 
     .dot.white {
-      background: #fff;
-      box-shadow: 0 0 8px #fff;
+      background: #374151; /* grafite no lugar do branco */
+      box-shadow: none;
     }
 
     @keyframes rotate {
@@ -82,19 +93,18 @@
 
     @keyframes float {
       0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-5px); }
     }
 
     @keyframes pulse {
-      0%,100% { opacity: 0.4; }
-      50% { opacity: 0.9; }
+      0%,100% { opacity: 0.15; }
+      50% { opacity: 0.35; }
     }
 
-    /* Ajustes para telas menores */
     @media (max-width: 400px) {
       .dot {
-        width: 6px;
-        height: 6px;
+        width: 5px;
+        height: 5px;
       }
     }
 
@@ -115,6 +125,7 @@
       <div class="dot white"></div>
     </div>
 
+    <!-- logo transparente -->
     <img src="logo.png" class="logo" alt="Nexus JDE">
 
   </div>
