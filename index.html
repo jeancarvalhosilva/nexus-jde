@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nexus JDE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 80vw;
+      max-width: 320px;
+      aspect-ratio: 1/1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      width: 70%;
+      max-width: 220px;
+      z-index: 2;
+      filter: drop-shadow(0 0 20px rgba(0,150,255,0.6));
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .glow {
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(0,150,255,0.25), transparent 70%);
+      filter: blur(60px);
+      z-index: 1;
+      animation: pulse 4s infinite;
+    }
+
+    .orbit {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(0,150,255,0.15);
+      border-radius: 50%;
+      animation: rotate 12s linear infinite;
+    }
+
+    .orbit.reverse {
+      animation-direction: reverse;
+      animation-duration: 18s;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #00aaff;
+      border-radius: 50%;
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px #00aaff;
+    }
+
+    .dot.white {
+      background: #fff;
+      box-shadow: 0 0 8px #fff;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 0.4; }
+      50% { opacity: 0.9; }
+    }
+
+    /* Ajustes para telas menores */
+    @media (max-width: 400px) {
+      .dot {
+        width: 6px;
+        height: 6px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="glow"></div>
+
+    <div class="orbit">
+      <div class="dot"></div>
+    </div>
+
+    <div class="orbit reverse">
+      <div class="dot white"></div>
+    </div>
+
+    <img src="logo.png" class="logo" alt="Nexus JDE">
+
+  </div>
+
+</body>
+</html>
